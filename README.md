@@ -1,4 +1,4 @@
 dm-snippets
 ===========
 
-The snippets I use for UltiSnips
+The snippets I use for UltiSnips.

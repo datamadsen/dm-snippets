@@ -1,0 +1,68 @@
+snippet #!
+	#!/usr/bin/env python
+
+snippet from
+	from ${1:package} import ${2:module}
+
+snippet docs
+	'''
+	File: ${1:`Filename('$1.py', 'foo.py')`}
+	Author: ${2:`g:snips_author`}
+	Description: ${3}
+	'''
+snippet while
+	while ${1:condition}:
+		${2:# code...}
+
+snippet with
+	with ${1:expr} as ${2:var}:
+		${3:# code...}
+
+snippet class
+	class ${1:Foo}(${2:self}):
+		${3:pass}
+
+snippet doc
+	"""${1:doc}"""
+
+snippet init
+	def __init__(self${1:, arg}):
+		${2:pass}
+
+snippet def
+	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}${3:, arg}):
+		${4:pass}
+
+snippet property
+	@property  # $1 {{{
+	def ${1:foo}(self):
+		${2:return self._$1}
+
+	@$1.setter
+	def $1(self, value):
+		${3:self._$1 = value}  # }}}
+
+snippet if
+	if ${1:condition}:
+		${2:code...}
+snippet else
+	else:
+		${1:code...}
+snippet elif
+	elif ${1:condition}:
+		${2:code...}
+
+snippet for
+	for ${1:item} in ${2:items}:
+		${3:code...}
+
+snippet lambda
+	${1:var} = lambda ${2:vars} : ${3:action}
+
+
+snippet ifmain
+	if __name__ == '__main__':
+		${1:main()}
+
+snippet pdb
+	import pdb; pdb.set_trace()

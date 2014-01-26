@@ -1,0 +1,109 @@
+global !p
+def x(snip):
+    if snip.ft.startswith("x"):
+        snip.rv = '/'
+    else:
+        snip.rv = ""
+endglobal
+
+#############
+# HTML TAGS #
+#############
+snippet input "<input> with <label>"
+<label for="${2:${1/[[:alpha:]]+|( )/(?1:_:\L$0)/g}}">$1</label><input type="${3:text/submit/hidden/button}" name="${4:$2}" value="$5"${6: id="${7:$2}"}`!p x(snip)`>
+endsnippet
+
+
+snippet textarea "<textarea>"
+<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">$0</textarea>
+endsnippet
+
+snippet div "<div>"
+<div>
+   $0
+</div>
+endsnippet
+
+snippet h1 "<h1>"
+<h1 id="${1/[\w\d]+|( )/(?1:_:\L$0\E)/g}">${1}</h1>
+endsnippet
+
+snippet head "<head>"
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"`!p x(snip)`>
+	<title>${1:`!p snip.rv = snip.basename or "Page Title"`}</title>
+	$0
+</head>
+endsnippet
+
+snippet link "<link>"
+<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" title="${4:no title}" charset="${5:utf-8}"`!p x(snip)`>
+endsnippet
+
+snippet meta "<meta>"
+<meta name="${1:name}" content="${2:content}"`!p x(snip)`>
+endsnippet
+
+snippet scriptsrc "<script src=''>"
+<script src="$1" type="text/javascript" charset="${3:utf-8}"></script>
+endsnippet
+
+snippet script "<script>"
+<script type="text/javascript" charset="utf-8">
+	$0
+</script>
+endsnippet
+
+snippet table "table"
+<table>
+    $0
+</table>
+endsnippet
+
+snippet a "href"
+<a href="${1:http://www.${2:url.com}}"${3: target="_blank"}>${4:Anchor Text}</a>
+endsnippet
+
+snippet p "paragraph"
+<p>$0</p>
+endsnippet
+
+snippet li "list item"
+<li></li>
+endsnippet
+
+snippet ul "unordered list"
+<ul>
+$0
+</ul>
+endsnippet
+
+snippet td "table cell"
+<td>$0</td>
+endsnippet
+
+snippet tr "table row"
+<tr>$0</tr>
+endsnippet
+
+snippet html "HTML5 Template"
+<!DOCTYPE html>
+<html>
+<head>
+    <title>${1}</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    ${2}
+</body>
+</html>
+endsnippet
+
+snippet var "underscore variable"
+<%= ${1} %>
+endsnippet
+
+snippet code "underscore variable"
+<% ${1} %>
+endsnippet
+# vim:ft=snippets:
