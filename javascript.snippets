@@ -61,4 +61,46 @@ snippet timeout "setTimeout function"
 setTimeout(function() {$0}${2:}, ${1:10});
 endsnippet
 
+###########################################################################
+#                            Backbone Snippets                            #
+###########################################################################
+snippet function "Backbone function"
+$1: function($2) {$0}
+endsnippet
+
+snippet getset "Backbone getter/setter"
+${1}: function(value, options) {
+    if(value)
+        this.set({$1: value}, options);
+    return this.get("$1");
+}
+endsnippet
+
+snippet config "RequireJS config"
+require.config({
+    shim: {
+        underscore: {
+            exports: '_'
+        },
+        backbone: {
+            deps: [
+                'underscore',
+                'jquery'
+            ],
+            exports: 'Backbone'
+        },
+        backboneLocalstorage: {
+            deps: ['backbone'],
+            exports: 'Store'
+        }
+    },
+    paths: {
+        jquery: './lib/jquery/jquery',
+        underscore: './lib/underscore/underscore',
+        backbone: './lib/backbone/backbone',
+        backboneLocalstorage: './lib/backbone.localStorage/backbone.localStorage',
+    }
+});
+endsnippet
+
 # vim:ft=snippets:
