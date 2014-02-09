@@ -76,6 +76,9 @@ ${1}: function(value, options) {
 }
 endsnippet
 
+###########################################################################
+#                            Requirejs Snippets                           #
+###########################################################################
 snippet config "RequireJS config"
 require.config({
     shim: {
@@ -103,4 +106,30 @@ require.config({
 });
 endsnippet
 
+###########################################################################
+#                            Mocha Snippets                               #
+###########################################################################
+snippet suiteSetup "Mocha TDD test suite setup"
+suite("$1", function() {
+    $0
+});
+endsnippet
+
+snippet setup "Mocha TDD test case setup"
+setup("$1", function() {
+    $0
+});
+endsnippet
+
+snippet setup "Mocha TDD test case teardown"
+teardown("$1", function() {
+    $0
+});
+endsnippet
+
+snippet test "Mocha TDD test case"
+test("$1", function() {
+    $0
+});
+endsnippet
 # vim:ft=snippets:
