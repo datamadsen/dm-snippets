@@ -70,8 +70,7 @@ endsnippet
 
 snippet getset "Backbone getter/setter"
 ${1}: function(value, options) {
-    if(value)
-        this.set({$1: value}, options);
+    if(typeof value != "undefined") this.set({$1: value}, options);
     return this.get("$1");
 }
 endsnippet
