@@ -1,6 +1,11 @@
 ###########################################################################
 #                            TextMate Snippets                            #
 ###########################################################################
+snippet strict "use strict"
+"use strict";
+$0
+endsnippet
+
 snippet get "Get Elements"
 getElement${1/(T)|.*/(?1:s)/}By${1:T}${1/(T)|(I)|.*/(?1:agName)(?2:d)/}('$2')
 endsnippet
@@ -64,16 +69,63 @@ endsnippet
 ###########################################################################
 #                            Backbone Snippets                            #
 ###########################################################################
+=======
+snippet bbmodel "Backbone model"
+var $1 = Backbone.Model.extend({
+    $0
+});
+endsnippet
+
+snippet bbcollection "Backbone collection"
+var $1 = Backbone.Collection.extend({
+    $0
+});
+endsnippet
+
+snippet bbview "Backbone view"
+var $1 = Backbone.View.extend({
+    $0
+});
+endsnippet
+
 snippet function "Backbone function"
 $1: function($2) {$0}
 endsnippet
 
 snippet getset "Backbone getter/setter"
+/**
+ * $1 get/set.
+ *
+ * ${3}
+ *
+ * @param {${2}=} value
+ * @param {object=} options
+ * @return {$2} $1
+ */
 ${1}: function(value, options) {
-    if(value)
-        this.set({$1: value}, options);
+    if(typeof value != "undefined") this.set({$1: value}, options);
     return this.get("$1");
-}
+}${0}
+endsnippet
+
+###########################################################################
+#                            Requirejs Snippets                           #
+###########################################################################
+snippet define "Define"
+define([
+    $1
+], function($2) {
+    $0
+});
+endsnippet
+
+snippet definebb "Define BB"
+define([
+    'underscore',
+    'backbone'$1
+], function(_, Backbone$2) {
+    $0
+});
 endsnippet
 
 snippet config "RequireJS config"
@@ -103,4 +155,30 @@ require.config({
 });
 endsnippet
 
+###########################################################################
+#                            Mocha Snippets                               #
+###########################################################################
+snippet suite "Mocha TDD test suite setup"
+suite("$1", function() {
+    $0
+});
+endsnippet
+
+snippet setup "Mocha TDD test case setup"
+setup(function() {
+    $0
+});
+endsnippet
+
+snippet teardown "Mocha TDD test case teardown"
+teardown(function() {
+    $0
+});
+endsnippet
+
+snippet test "Mocha TDD test case"
+test("$1", function() {
+    $0
+});
+endsnippet
 # vim:ft=snippets:
