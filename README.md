@@ -11,4 +11,4 @@ Install with vundle:
 Usage
 =====
 Put this in `.vimrc`
-`let g:UltiSnipsSnippetsDir="~/.vim/bundle/dm-snippets/"`
+`let g:UltiSnipsSnippetsDir="~/.vim/bundle/dm-snippets/UltiSnips"`
