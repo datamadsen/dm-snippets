@@ -180,4 +180,26 @@ test("$1", function() {
     $0
 });
 endsnippet
+###########################################################################
+#                             Node Snippets                               #
+###########################################################################
+snippet cb "Callback with check for error" i
+function(error, ${1:result}) {
+	if(error) { callback(error, null) }
+	else	  { ${0:callback(null, $1);} }
+}
+endsnippet
+
+snippet nfn "Node function"
+function(${1:, }${2:callback}) {
+	$0
+}
+endsnippet
+###########################################################################
+#                             JSDoc Snippets                              #
+###########################################################################
+snippet //t "JSDoc type" i
+/** @type {$1} */
+$0
+endsnippet
 # vim:ft=snippets:
