@@ -1,0 +1,73 @@
+snippet summary "Documentation string"
+/// <summary>
+/// ${1}
+/// </summary>
+endsnippet
+
+snippet summar "Documentation string"
+/// <summary>
+/// ${1}
+/// </summary>
+endsnippet
+
+snippet para "Documentation paragraph"
+<para>${1}</para>
+endsnippet
+
+snippet aaa "Arrange, Act, Assert"
+// Arrange
+${1}
+// Act
+
+// Assert
+endsnippet
+
+snippet tm "Test method"
+[TestMethod]
+[TestCategory("${1:unit}")]
+public void ${2}()
+{
+	// Arrange
+	${3}
+	// Act
+	
+	// Assert
+}
+endsnippet
+
+snippet itm "Integration test method"
+[TestMethod]
+[TestCategory("${1:integration}")]
+public void ${2}()
+{
+	using (var context = new SLADbContext())
+	{
+		// Arrange
+		context.Database.Initialize(true);
+		${3}
+		context.SaveChanges();
+	}
+
+	using (var context = new SLADbContext())
+	{
+		// Act
+	}
+
+	using (var context = new SLADbContext())
+	{
+		// Assert
+	}
+}
+endsnippet
+
+snippet ef "Expression<Func<T, T>>"
+Expression<Func<${1}>>${2}
+endsnippet
+
+snippet gs "get; set;"
+${1}{ get; set; }
+endsnippet
+
+snippet nie "throw new NotImplementedException()"
+throw new NotImplementedException();
+endsnippet
