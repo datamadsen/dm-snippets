@@ -81,3 +81,11 @@ private List<ValidationResult> Validate${1}()
 	return result;
 }
 endsnippet
+
+snippet with "Builder 'With' method"
+public OrganizationChangeBuilder With${1}(${2} ${3})
+{
+	this.$3 = $3;
+	return this;
+}
+endsnippet
