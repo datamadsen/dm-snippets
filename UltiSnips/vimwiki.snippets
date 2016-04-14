@@ -1,0 +1,14 @@
+snippet task "task" !b
+* [ ] ${1}
+endsnippet
+
+snippet boiler "Boiler plate" !b
+= `!v expand("%:t:r")` =
+
+== Description from task list ==
+${0}
+== My Thougts ==
+
+== Breakdown | project:`!v expand('%:p:h:t')` +#`!v split(expand("%:t:r"), ' ')[0]` ==
+* [ ] `!v expand("%:t:r")`
+endsnippet
